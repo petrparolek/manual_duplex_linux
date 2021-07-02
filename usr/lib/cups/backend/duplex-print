@@ -56,7 +56,7 @@ then
         --width=$(echo $(sudo -u $user xdpyinfo -display :0.0| grep dimensions | sed -r 's/^[^0-9]*([0-9]+).*$/\1/') / 2 | bc)
   then
     #printing even
-    lp -s -d $USE_PRINTER -n "$numcopies" $lp_args -o page-set=even -o collate=true -t "$title"-odd "$filename"
+    lp -s -d $USE_PRINTER -n "$numcopies" $lp_args -o orientation-requested=6 -o page-set=even -o collate=true -t "$title"-odd "$filename"
 
 #    My cups does this automagically
     #PRINT ONE BLANK.
